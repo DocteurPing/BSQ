@@ -5,7 +5,7 @@
 ** Login   <cedric@epitech.net>
 ** 
 ** Started on  Wed Dec  7 13:57:55 2016 OGIRE Cedric
-** Last update Sun Dec 18 21:59:26 2016 cedric
+** Last update Sun Dec 18 23:04:50 2016 cedric
 */
 
 #include "my.h"
@@ -33,7 +33,6 @@ int		bsq(char **av)
   while (map[i] != '\n')
     i = i + 1;
   map2 = &map[i + 1];
-  my_printf("%s\n", map2);
   map2 = algo(map2);
   my_printf("%s", map2);
   close(fd);
