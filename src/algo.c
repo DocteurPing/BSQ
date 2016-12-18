@@ -5,7 +5,7 @@
 ** Login   <cedric@epitech.net>
 ** 
 ** Started on  Sat Dec 17 13:59:14 2016 cedric
-** Last update Sun Dec 18 22:52:20 2016 cedric
+** Last update Sun Dec 18 23:07:20 2016 cedric
 */
 
 #include "bsq.h"
@@ -24,7 +24,7 @@ int	get_size_line(char *map)
   return (i);
 }
 
-char    *put_cross(char *map, t_bsq *bsq)
+char	*put_cross(char *map, t_bsq *bsq)
 {
   int   i;
   int   x;
@@ -40,7 +40,6 @@ char    *put_cross(char *map, t_bsq *bsq)
       i = 0;
       x = x + get_size_line(map);
     }
-  my_printf("\n\n%d\n\n%d\n\n%d\n\n%d\n\n", bsq->size, bsq->pos, bsq->pos_square, bsq->size_square);
   return (map);
 }
 
@@ -49,7 +48,7 @@ int	check_square(char *map, t_bsq *bsq)
   int	x;
   int	i;
   int	y;
-  
+
   x = 0;
   i = bsq->pos;
   while ((x / get_size_line(map)) < bsq->size)

@@ -5,10 +5,10 @@
 ** Login   <cedric@epitech.net>
 ** 
 ** Started on  Sat Dec 17 13:53:18 2016 cedric
-** Last update Sat Dec 17 13:58:57 2016 cedric
+** Last update Sun Dec 18 23:07:43 2016 cedric
 */
 
 int	check_error(char **av)
 {
-  
+  return (0);
 }
