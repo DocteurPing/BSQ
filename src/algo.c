@@ -5,7 +5,7 @@
 ** Login   <cedric@epitech.net>
 ** 
 ** Started on  Sat Dec 17 13:59:14 2016 cedric
-** Last update Sun Dec 18 23:14:12 2016 cedric
+** Last update Sun Dec 18 23:15:38 2016 cedric
 */
 
 #include "bsq.h"
@@ -35,7 +35,6 @@ char	*put_cross(char *map, t_bsq *bsq)
       while (i < bsq->size - 1)
 	{
 	  map[i + x] = 'x';
-	  my_printf("[pos = %d]", i + x);
 	  i = i + 1;
 	}
       i = 0;
