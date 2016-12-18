@@ -5,10 +5,12 @@
 ## Login   <cedric@epitech.net>
 ## 
 ## Started on  Mon Dec  5 16:31:52 2016 OGIRE Cedric
-## Last update Mon Dec 12 18:02:37 2016 cedric
+## Last update Sat Dec 17 17:00:43 2016 cedric
 ##
 
-SRC	=	src/bsq.c
+SRC	=	src/bsq.c		\
+		src/check_error.c	\
+		src/algo.c
 
 OBJ	=	$(SRC:.c=.o)
 

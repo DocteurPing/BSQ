@@ -5,7 +5,7 @@
 ** Login   <cedric@epitech.net>
 ** 
 ** Started on  Mon Nov  7 14:11:17 2016 OGIRE Cedric
-** Last update Mon Nov 28 14:53:39 2016 OGIRE Cedric
+** Last update Sat Dec 17 15:21:29 2016 cedric
 */
 
 #include "my.h"
@@ -18,4 +18,5 @@ void	my_putstr_err(char *str)
       my_putchar_err(*str);
       str = str + 1;
     }
+  exit (84);
 }

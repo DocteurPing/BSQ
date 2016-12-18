@@ -5,7 +5,7 @@
 ** Login   <cedric@epitech.net>
 ** 
 ** Started on  Mon Nov 14 14:33:31 2016 OGIRE Cedric
-** Last update Thu Dec  8 11:25:48 2016 OGIRE Cedric
+** Last update Sat Dec 17 13:49:46 2016 cedric
 */
 
 #ifndef MY_H_
@@ -16,7 +16,7 @@ void	my_putchar(char c);
 void	my_put_nbr(int nb);
 int	my_putstr(char *str);
 int	my_strlen(char *str);
-void	my_pritnf(char *str, ...);
+void	my_printf(char *str, ...);
 void	my_put_oct(int nb);
 void	my_put_base(int nb, char *str);
 char	*my_revstr(char *str);
