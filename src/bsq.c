@@ -15,43 +15,40 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-int		bsq(char **av)
-{
-  int		fd;
-  struct stat	*buffer;
-  char		*map;
-  char		*map2;
-  int		i;;
+void bsq(char **av) {
+    int fd;
+    struct stat *buffer;
+    char *map;
+    char *map2;
+    int i = 0;
 
-  i = 0;
-  fd = open(av[1], O_RDONLY);
-  buffer = malloc(sizeof(struct stat));
-  stat(av[1], buffer);
-  map = malloc(sizeof(char) * (buffer->st_size + 2));
-  read(fd, map, buffer->st_size);
-  map[buffer->st_size + 1] = '\0';
-  while (map[i] != '\n')
-    i = i + 1;
-  map2 = &map[i + 1];
-  map2 = algo(map2);
-  my_printf("%s", map2);
-  close(fd);
+    fd = open(av[1], O_RDONLY);
+    buffer = malloc(sizeof(struct stat));
+    stat(av[1], buffer);
+    map = malloc(sizeof(char) * (buffer->st_size + 1));
+    read(fd, map, buffer->st_size);
+    map[buffer->st_size] = '\0';
+    while (map[i] != '\n')
+        i = i + 1;
+    map2 = &map[i + 1];
+    map2 = algo(map2, buffer->st_size - i - 1);
+    my_printf("%s", map2);
+    close(fd);
+    free(map);
+    free(buffer);
 }
 
-int	main(int ac, char **av)
-{
-  int	fd;
+int main(int ac, char **av) {
+    int fd;
 
-  if (ac == 2)
-    {
-      fd = open(av[1], O_RDONLY);
-      if (fd == -1)
-	my_putstr_err("[ERROR]: Open problems\n");
-      close(fd);
-    }
-  else
-    my_putstr_err("[ERROR]: Need 2 arguments\n");
-  check_error(av);
-  bsq(av);
-  return (0);
+    if (ac == 2) {
+        fd = open(av[1], O_RDONLY);
+        if (fd == -1)
+            my_putstr_err("[ERROR]: Open problems\n");
+        close(fd);
+    } else
+        my_putstr_err("[ERROR]: Need 2 arguments\n");
+    check_error(av);
+    bsq(av);
+    return (0);
 }

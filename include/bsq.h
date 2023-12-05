@@ -13,15 +13,15 @@
 
 #include <stdlib.h>
 
-typedef struct	s_bsq
-{
-  int		size;
-  int		pos;
-  int		pos_square;
-  int		size_square;
-}		t_bsq;
+typedef struct s_bsq {
+    int size;
+    int pos;
+    int pos_square;
+    int size_square;
+} t_bsq;
 
-char	*algo(char *map);
-int	check_error(char **av);
+char *algo(char *map, size_t size);
+
+int check_error(char **av);
 
 #endif

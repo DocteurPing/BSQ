@@ -14,14 +14,14 @@ SRC	=	src/bsq.c		\
 
 OBJ	=	$(SRC:.c=.o)
 
-CFLAGS	+=	-Iinclude -lm -Llib/my -lmy
+CFLAGS	+=	-Iinclude -lm -Llib/my -lmy -g3
 
 NAME	=	bsq
 
 all:	libs $(NAME)
 
 $(NAME):	$(OBJ)
-	gcc -W -Wall $(OBJ) $(CFLAGS) lib/my/libmy.a -o $(NAME)
+	gcc -W -Wall -Wextra $(OBJ) $(CFLAGS) lib/my/libmy.a -o $(NAME)
 
 libs:
 	cd lib/my/ && make all
