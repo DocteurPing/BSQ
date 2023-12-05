@@ -17,25 +17,20 @@
 
 void bsq(char **av) {
     int fd;
-    struct stat *buffer;
+    struct stat buffer;
     char *map;
-    char *map2;
     int i = 0;
 
     fd = open(av[1], O_RDONLY);
-    buffer = malloc(sizeof(struct stat));
-    stat(av[1], buffer);
-    map = malloc(sizeof(char) * (buffer->st_size + 1));
-    read(fd, map, buffer->st_size);
-    map[buffer->st_size] = '\0';
+    stat(av[1], &buffer);
+    map = malloc(sizeof(char) * (buffer.st_size + 1));
+    read(fd, map, buffer.st_size);
+    map[buffer.st_size] = '\0';
     while (map[i] != '\n')
         i = i + 1;
-    map2 = &map[i + 1];
-    map2 = algo(map2, buffer->st_size - i - 1);
-    my_printf("%s", map2);
+    my_printf("%s", algo(&map[i + 1], buffer.st_size - i - 1));
     close(fd);
     free(map);
-    free(buffer);
 }
 
 int main(int ac, char **av) {

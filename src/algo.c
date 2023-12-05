@@ -59,24 +59,22 @@ int check_square(char *map, t_bsq *bsq, size_t size) {
 }
 
 char *algo(char *map, size_t size) {
-    t_bsq *bsq;
+    t_bsq bsq;
     int check;
 
-    bsq = malloc(sizeof(t_bsq));
-    bsq->size = 1;
-    bsq->size_square = 0;
-    bsq->size = 0;
-    bsq->pos = 0;
-    while (map[bsq->pos] != '\0') {
-        check = check_square(map, bsq, size);
+    bsq.size = 1;
+    bsq.size_square = 0;
+    bsq.size = 0;
+    bsq.pos = 0;
+    while (map[bsq.pos] != '\0') {
+        check = check_square(map, &bsq, size);
         if (check == 0) {
-            bsq->pos_square = bsq->pos;
-            bsq->size_square = bsq->size;
-            bsq->size = bsq->size + 1;
+            bsq.pos_square = bsq.pos;
+            bsq.size_square = bsq.size;
+            bsq.size = bsq.size + 1;
         } else
-            bsq->pos = bsq->pos + 1;
+            bsq.pos = bsq.pos + 1;
     }
-    map = put_cross(map, bsq);
-    free(bsq);
+    map = put_cross(map, &bsq);
     return (map);
 }
