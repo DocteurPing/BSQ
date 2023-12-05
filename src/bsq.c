@@ -28,7 +28,8 @@ void bsq(char **av) {
     map[buffer.st_size] = '\0';
     while (map[i] != '\n')
         i = i + 1;
-    my_printf("%s", algo(&map[i + 1], buffer.st_size - i - 1));
+    algo(&map[i + 1], buffer.st_size - i - 1);
+    my_printf("%s", &map[i + 1]);
     close(fd);
     free(map);
 }

@@ -14,7 +14,7 @@ SRC	=	src/bsq.c		\
 
 OBJ	=	$(SRC:.c=.o)
 
-CFLAGS	+=	-Iinclude -lm -Llib/my -lmy -g3
+CFLAGS	+=	-Iinclude -lm -Llib/my -lmy
 
 NAME	=	bsq
 

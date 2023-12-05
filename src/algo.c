@@ -22,7 +22,7 @@ int get_size_line(const char *map) {
     return (i);
 }
 
-char *put_cross(char *map, t_bsq *bsq) {
+void put_cross(char *map, t_bsq *bsq) {
     int i;
     int x;
     i = 0;
@@ -35,7 +35,6 @@ char *put_cross(char *map, t_bsq *bsq) {
         i = 0;
         x = x + get_size_line(map);
     }
-    return (map);
 }
 
 int check_square(char *map, t_bsq *bsq, size_t size) {
@@ -58,7 +57,7 @@ int check_square(char *map, t_bsq *bsq, size_t size) {
     return (0);
 }
 
-char *algo(char *map, size_t size) {
+void algo(char *map, size_t size) {
     t_bsq bsq;
     int check;
 
@@ -75,6 +74,5 @@ char *algo(char *map, size_t size) {
         } else
             bsq.pos = bsq.pos + 1;
     }
-    map = put_cross(map, &bsq);
-    return (map);
+    put_cross(map, &bsq);
 }
